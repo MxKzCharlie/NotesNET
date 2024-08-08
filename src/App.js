@@ -1,12 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import Login from './login';
 
 function App() {
   return (
-    <div className='flex justify-center items-center w-screen h-screen'>
-      <div className='flex justify-center rounded-lg items-center w-36 nm-flat-emerald-200 h-12 p-0.5 text-lg font-bold '>
-        <h1 className='text-emerald-700'>Hola Mundo</h1>
-      </div>
+    <div className='flex flex-col justify-center items-center w-screen h-screen bg-slate-50'>
+      <Login />
     </div>
   );
 }
