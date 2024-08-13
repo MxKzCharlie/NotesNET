@@ -1,10 +1,14 @@
-import Login from './login';
+import ControlBar from './components/controlBar';
+import Header from './components/header';
+import NotesView from './components/notesView';
 
 function App() {
   return (
-    <div className='flex flex-col justify-center items-center w-screen h-screen bg-slate-50'>
-      <Login />
-    </div>
+    <div className="w-screen h-screen grid grid-cols-custom grid-rows-custom">
+      <Header />
+      <ControlBar />
+      <NotesView />
+    </div>  
   );
 }
 
