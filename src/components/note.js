@@ -13,7 +13,7 @@ function Note(){
                     transition ease-in-out delay-300ms hover:scale-110">
                         Confirm
                     </button>
-                    <Link to={`/`} >
+                    <Link to='..' relative="path">
                         <button className="bg-gradient-to-b from-red-600 to-emerald-50 rounded-xl p-2 
                         transition ease-in-out delay-300ms hover:scale-110">
                             Cancel
@@ -22,8 +22,8 @@ function Note(){
                 </div>
             </div>
             <div className="flex justify-center">
-                <textarea style={{resize: 'none'}} placeholder="Write here..." className="w-3/4 h-72 object-none p-4 rounded-xl 
-                text-xl bg-emerald-50 " />
+                <textarea style={{resize: 'none'}} placeholder="Write here..." className="w-3/4 h-72 object-none 
+                p-4 rounded-xl text-xl bg-emerald-50 " />
             </div>
         </form>
     );    

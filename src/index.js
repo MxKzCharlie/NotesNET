@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import Login from './components/login';
 import CreateAccount from './components/createAccount';
+import Layout from './components/layout';
+import NotesView from './components/notesView'
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import './index.css';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +16,16 @@ const router = createBrowserRouter([
   {
     path: 'create-account/',
     element: <CreateAccount />
+  },
+  {
+    path: 'home/:username',
+    element: <Layout />,
+    children: [
+      {
+        path: 'create-note/',
+        element: <NotesView />
+      },
+    ]
   }
 ]);
 

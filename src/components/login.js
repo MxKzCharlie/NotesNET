@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 function Login(){
@@ -14,6 +14,8 @@ function Login(){
         });
     };
     
+    const navigate = useNavigate()
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -24,12 +26,12 @@ function Login(){
           },
           body: JSON.stringify(formData),
         });
-    
+
         const data = await response.json();
         if (data.status === 201) {
-          alert('Form submitted successfully!');
+          navigate(`home/${data.usuario}`)
         } else {
-          alert('Error submitting form');
+          alert('Error, usuario or password was incorrect');
         }
       };
 
