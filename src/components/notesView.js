@@ -6,7 +6,6 @@ function NotesView(){
     const [dataSt, setDataSt] = useState(null);
     const [loading, setLoading] = useState(true);
     const {username} = useParams();
-    let userDir = {"username": username};
 
     useEffect(() => {
         async function getData(){
@@ -15,7 +14,7 @@ function NotesView(){
                 headers: {
                 'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(userDir),
+                body: JSON.stringify({"username": username}),
             });
             
             const data = await response.json();
@@ -35,13 +34,13 @@ function NotesView(){
             </div>
         );
     }else{
-        const titles = [];
+        const notes = [];
         dataSt.forEach(element => {
-            titles.push(element['title'])
+            notes.push(Object.entries(element))
         });
-        return (
+        return(
             <div className="flex flex-row flex-wrap gap-8 overflow-x-hidden justify-center p-10">
-                {titles.map(title => <Card title={title} />)}
+                {notes.map(note => <Card title={note[2][1]} content={note[1][1]} id={note[0][1]} />)}
             </div>
         ); 
     }

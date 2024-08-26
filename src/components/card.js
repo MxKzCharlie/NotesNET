@@ -1,11 +1,16 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function Card({title}){
+function Card({title, content, id}){
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('edit-note/', {state: {"title": title, "content": content, "id": id}})
+    };
+
     return(
-        <div className="h-card w-card transition duration-300 ease-in-out hover:scale-110 cursor-pointer rounded-xl
+        <button onClick={handleClick} className="h-card w-card transition duration-300 ease-in-out hover:scale-110 cursor-pointer rounded-xl
         bg-gradient-to-t from-emerald-200 to-emerald-400 flex justify-center items-center p-8 list-none">
             <h1 className="text-xl font-light">{title}</h1>
-        </div>
+        </button>              
     );
 }
 

@@ -2,24 +2,23 @@ import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Note({title, content}){
+function Note(){
     const {username} = useParams()
 
-    const [noteDt, setNoteDt] = useState({
+    const [noteSt, setNoteSt] = useState({
         'title':'',
         'content': '',
         'user': username
     });
     
     const handleChange = (e) => {
-        setNoteDt({
-            ...noteDt,
+        setNoteSt({
+            ...noteSt,
             [e.target.name]: e.target.value,
         });
-        console.log(e.target.value)
     };
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -29,7 +28,7 @@ function Note({title, content}){
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(noteDt),
+          body: JSON.stringify(noteSt),
         });
 
         const data = await response.json();
@@ -39,7 +38,7 @@ function Note({title, content}){
           alert('Error, please try again');
         }
         window.location.reload();
-      };
+    };
 
     return(
         <dialog open className="flex h-screen w-screen justify-center items-center fixed 
@@ -48,24 +47,24 @@ function Note({title, content}){
                 <div className="flex flex-row flex-nowrap justify-between items-center p-8">
                     <div className="overflow-hidden">
                         <input type="text"  placeholder="Title" onChange={handleChange} name="title"
-                        className="bg-emerald-50 rounded-2xl p-3 text-xl text-center w-96" value={noteDt.title} />
+                        className="bg-emerald-50 rounded-2xl p-3 text-xl text-center w-96" />
                     </div>
                     <div className="flex flex-row gap-4 p-4">
                         <button type="submit" className="bg-gradient-to-b from-green-600 to-emerald-50 rounded-xl p-2 
                         transition ease-in-out delay-300ms hover:scale-110">
-                            Confirm
+                            Save
                         </button>
                         <Link to='..' relative="path">
-                            <button className="bg-gradient-to-b from-red-600 to-emerald-50 rounded-xl p-2 
-                            transition ease-in-out delay-300ms hover:scale-110">
-                                Cancel
+                            <button className="bg-gradient-to-b from-gray-600 to-emerald-50 rounded-2xl py-2 px-4
+                            transition ease-in-out delay-300ms hover:scale-110 font-semibold text-xl">
+                                X
                             </button>
                         </Link>
                     </div>
                 </div>
                 <div className="flex justify-center">
                     <textarea style={{resize: 'none'}} placeholder="Write here..." onChange={handleChange} name="content"
-                    className="w-3/4 h-72 object-none p-4 rounded-xl text-xl bg-emerald-50" value={noteDt.content} />
+                    className="w-3/4 h-72 object-none p-4 rounded-xl text-xl bg-emerald-50" />
                 </div>
             </form>
         </dialog>

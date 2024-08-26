@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import Login from './components/login';
 import CreateAccount from './components/createAccount';
 import Layout from './components/layout';
+import NoteEdit from './components/noteEdit';
 import Note from './components/note';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'edit-note/',
-        element: <Note />
+        element: <NoteEdit />
       }
     ]
   }
