@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/NotesNET/static/css/main.958819c7.css",
+    "main.js": "/NotesNET/static/js/main.2d388e71.js",
+    "static/js/453.c6f31987.chunk.js": "/NotesNET/static/js/453.c6f31987.chunk.js",
+    "index.html": "/NotesNET/index.html",
+    "main.958819c7.css.map": "/NotesNET/static/css/main.958819c7.css.map",
+    "main.2d388e71.js.map": "/NotesNET/static/js/main.2d388e71.js.map",
+    "453.c6f31987.chunk.js.map": "/NotesNET/static/js/453.c6f31987.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.958819c7.css",
+    "static/js/main.2d388e71.js"
+  ]
+}
