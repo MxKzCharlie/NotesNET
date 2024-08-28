@@ -6,6 +6,8 @@ function Login(){
         username: '',
         password: '',
     });
+
+    const [warning, setWarning] = useState('‎ ‎ ‎ ');
     
     const handleChange = (e) => {
         setFormData({
@@ -31,7 +33,7 @@ function Login(){
         if (data.status === 201) {
           navigate(`home/${data.usuario}`)
         } else {
-          alert('Error, usuario or password was incorrect');
+          setWarning('Error, username or password was incorrect');
         }
       };
 
@@ -46,12 +48,13 @@ function Login(){
             <label className="mt-10 text-3xl text-emerald-800" >Password:</label>
             <input type="password" name="password" value={formData.password} onChange={handleChange} placeholder='Password'
             className="px-7 py-2 text-lg rounded-lg nm-inset-emerald-100 text-center" />
+            <p className='text-red-600 text-lg'>{warning}</p>
             <button type="submit" className="text-lg nm-flat-emerald-700-xs text-emerald-300 mt-5 px-4 rounded-md 
             transition ease-in-out delay-300ms hover:scale-110 active:scale-100">
                 Sign In
             </button>
             <Link to={`create-account/`}>
-                <p className="no-underline text-emerald-800 mt-10 hover:text-emerald-600">
+                <p className="no-underline text-emerald-800 mt-6 hover:text-emerald-600">
                     Are you new? Create your account
                 </p>
             </Link>

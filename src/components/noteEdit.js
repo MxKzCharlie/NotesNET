@@ -39,7 +39,9 @@ function NoteEdit(){
         window.location.reload();
     };
 
-    const handleClick = async () => {
+    const handleClick = async (e) => {
+        e.preventDefault();
+
         const response = await fetch('/api-notes/delete-note/',{
             method: 'DELETE',
             headers:{
