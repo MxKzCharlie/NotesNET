@@ -25,7 +25,7 @@ function NotesView(){
             setDataSt(data.data);
         }
         getData();
-    }, []);
+    }, [username]);
 
     if(loading){
         return(
