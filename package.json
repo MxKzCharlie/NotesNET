@@ -1,6 +1,6 @@
 {
   "name": "notes-app-react",
-  "homepage": "https://MxKzCharlie.github.io/NotesNET",
+  "homepage": "https://main--notesnet.netlify.app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
