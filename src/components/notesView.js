@@ -9,7 +9,7 @@ function NotesView(){
 
     useEffect(() => {
         async function getData(){
-            const response = await fetch('/api-notes/get-notes/', {
+            const response = await fetch('https://mxkzcharlie.pythonanywhere.com/api-notes/get-notes/', {
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json',
