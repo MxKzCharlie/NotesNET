@@ -21,7 +21,7 @@ function Login(){
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const response = await fetch('/login/', {
+        const response = await fetch('https://mxkzcharlie.pythonanywhere.com/login/', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
