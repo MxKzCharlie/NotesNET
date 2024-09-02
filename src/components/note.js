@@ -23,7 +23,7 @@ function Note(){
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const response = await fetch('/api-notes/note-register/', {
+        const response = await fetch('https://mxkzcharlie.pythonanywhere.com/api-notes/note-register/', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
