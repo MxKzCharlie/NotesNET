@@ -22,7 +22,7 @@ function NoteEdit(){
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const response = await fetch('/api-notes/edit-note/', {
+        const response = await fetch('https://mxkzcharlie.pythonanywhere.com/api-notes/edit-note/', {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ function NoteEdit(){
     const handleClick = async (e) => {
         e.preventDefault();
 
-        const response = await fetch('/api-notes/delete-note/',{
+        const response = await fetch('https://mxkzcharlie.pythonanywhere.com/api-notes/delete-note/',{
             method: 'DELETE',
             headers:{
                 'Content-Type': 'application/json',
