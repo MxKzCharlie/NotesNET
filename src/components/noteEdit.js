@@ -36,7 +36,7 @@ function NoteEdit(){
         } else {
             alert('Error, please try again');
         }
-        window.location.reload();
+        //window.location.reload();
     };
 
     const handleClick = async (e) => {
