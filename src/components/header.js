@@ -4,7 +4,7 @@ function Header({usuario}){
     const navigate = useNavigate();
 
     const handleClick = async () => {
-        fetch('/logout/')
+        fetch('https://mxkzcharlie.pythonanywhere.com/logout/')
             .then(response => response.json())
             .then(data => {
                 if(data.status === 200)
